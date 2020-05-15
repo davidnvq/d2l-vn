@@ -86,7 +86,7 @@ clean:
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 
 br:
-	git fetch vi/master
+	git fetch vi
 	git checkout vi/master
 	git checkout -b $(call args,"")
 
