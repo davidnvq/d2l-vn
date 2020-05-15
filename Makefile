@@ -79,3 +79,16 @@ pdf: $(DEPS) $(OBJ)
 
 clean:
 	rm -rf build/chapter* build/_build build/img build/data build/environment.yml build/README.md $(PKG)
+
+%:
+	@:
+
+args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
+
+br:
+	git fetch vi/master
+	git checkout vi/master
+	git checkout -b $(call args,"")
+
+tran:
+	echo "translate"
