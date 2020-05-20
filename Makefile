@@ -92,3 +92,10 @@ br:
 
 tran:
 	echo "translate"
+
+poc:
+	git add ./
+	git rm translate.py
+	git reset -- Makefile
+	git commit
+	git push origin `git branch --show-current`
